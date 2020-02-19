@@ -1,13 +1,63 @@
 \documentclass{article}
+
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[spanish]{babel}
 \title{Apuntes de Programación Lineal}
 \author{Ana karen}
+\setlength{\parindent}{0cm}
 
 
 
 
 \begin{document}
 \maketitle
+\tableofcontents
+\section{Forma Estándar}
+\label{sec:forma-estandar-y}
 
-La forma estándar de un problema de programacion lineal es: Dados una matriZ $A$ y vectores $b,c$, maximizar $c^Tx$ sujeto a $Ax\leq b$.
+La forma estándar de un problema de programación lineal es:
+
+Dados una matriz $A$ y vectores $b,c$, maximizar $c^Tx$ sujeto a $Ax\leq b$.
+\subsection{Ejemplo}
+Resolver el problema en su forma estándar $Ax\leq b$, determinando A,b y c.
+
+Maximizar $x+y$, sujeto a: $X\geq 0$, $1\leq y\leq 3$, $2x+y\leq 7$.
+Resolviendo el problema en forma estándar 
+
+\section{Forma Simplex}
+\label{sec:forma-simplex}
+
+Para escribir un problema de programación lineal en la forma simplex, se añade una variable de holgura para cada una de las restricciones que se tienen; es decir, si se tienes 3 restricciones se van a añadir 3 variables de holgura; con lo cual, el problema en foma simplex es:
+
+Dados una matriz $A$ y vectores $b,c$,maximizar $c^Tx$ sujeto a $Ax=b$.\\
+
+
+\begin{tabular}{|c|c|c|}
+  \hline
+  & A & B \\
+  \hline
+  Máquina 1 & 1 & 2 \\
+  \hline
+  Máquina 2 & 1 & 1 \\
+  \hline
+\end{tabular}
+
+\begin{equation*}
+  \label{eq:1}
+  A=
+  \begin{pmatrix}
+    0 & 1 & 2\\
+    3 & 2 & -1
+  \end{pmatrix}
+  \begin{pmatrix}
+    5 & -6 & 2\\
+    3 & 2 & 1
+   \end{pmatrix}
+\end{equation*}
+
+
+
+
 \end{document}
+
