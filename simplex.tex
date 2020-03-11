@@ -1,0 +1,88 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+
+\title{Método Simplex}
+\author{Karen Lozada}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+\label{sec:introduccion}
+
+El método simplex es un algoritmo para resolver problemas de programación lineal. Fué inventado por George Dantzig en el año 1947.
+
+\section{Ejemplo}
+\label{sec:ejemplo}
+
+Ilustraremos la aplicacíon del método simplex con un ejemplo.
+
+\begin{equation*}
+  \begin{aligned}
+    \text{Maximizar} \quad & 2x_1 +x_2
+    
+    \text{sujeto a} \quad &
+    \begin      {aligned}
+      x_1-x_2 &\leq 2\\
+      -2x_1+x_2 &\leq 2\\
+      3x_1+4x_2 &\leq 12\\
+      x_1+x_2 &\geq 1\\
+      x_1,x_2 &\geq 0
+    \end{aligned}
+  \end{aligned}
+\end{equation*}
+
+Como una de nuestras desigualdades está volteada con el simbolo $\geq$ entonces multiplicamos ambos lados de la desigualdad por $-1$ obteniendo así la forma estándar:
+
+\begin{equation*}
+  \begin{aligned}
+    \text{Maximizar} \quad & 2x_1 +x_2
+    
+    \text{sujeto a} \quad &
+    \begin      {aligned}
+      x_1-x_2 &\leq 2\\
+      -2x_1+x_2 &\leq 2\\
+      3x_1+4x_2 &\leq 12\\
+     -x_1-x_2 &\leq 1\\
+      x_1,x_2 &\geq 0
+    \end{aligned}
+  \end{aligned}
+\end{equation*}
+
+Para obtener la forma simplex, añadimos una variable de holgura por cada desigualdad.
+
+\begin{equation*}
+  \begin{aligned}
+    \text{Maximizar} \quad & 2x_1 +x_2
+    
+    \text{sujeto a} \quad &
+    \begin      {aligned}
+      x_1-x_2+x_3 &\leq 2\\                          
+      -2x_1+x_2+x_4 &\leq 2\\
+      3x_1+4x_2+x_5 &\leq 12\\
+     -x_1-x_2+x_6 &\leq 1\\
+      x_1,x_2,x_3,x_4,x_5,x_6 &\geq 0
+      \end{aligned}
+  \end{aligned}
+\end{equation*}
+
+A continuacion obtenemos un \emph{tablero simplex} despejando las variables de holgura:
+
+\begin{equation*}
+  \begin{aligned}
+      x_3 &=2-x_1+x_2\\                          
+      x_4 &=2+2x_1-x_2\\
+      x_5 &=12-3x_1-4x_2\\
+     x_6 &=-1+x_1+x_2\\
+     \hline
+     z &=\phantom{-1}+2x_1+x_2
+    \end{aligned}
+\end{equation*}
+
+
+\end{document}
